@@ -8,9 +8,16 @@ access_token="0"
 
 cp="$mc_jar"
 for jar in $(find "$lib_dir" -name "*.jar"); do
+
+    # the fabric mc libraries present in my libs folder seemed to interfere with the classpath, so remove them
+    # if you happen to have other libs that are not required for the version you are attempting to run, uncomment the block below and add the libraries there
     if [[ "$jar" == *fabricmc* || "$jar" == *net/fabricmc* ]]; then
         continue
     fi
+    #if [[ "$jar" == *ipsum* || "$jar" == *lorem/ipsum* ]]; then
+    #    continue
+    #fi
+    
     cp="${cp}:${jar}"
 done
 
