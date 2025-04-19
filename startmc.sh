@@ -1,12 +1,23 @@
 #!/bin/bash
 
-version="1.20.4"
+if [ "$#" -ne 2 ]; then
+    echo "error: invalid number of arguments given"
+    echo "usage: ./startmc.sh <version> <username>"
+    exit
+fi
+
+version=$1
 mc_home="$HOME/.minecraft"
 mc_jar="$mc_home/versions/$version/$version.jar"
 lib_dir="$mc_home/libraries"
 
-username="test"
+username=$2
 access_token="0"
+
+if [ ! -f "$mc_jar" ]; then
+    echo "error: version $version is not installed"
+    exit
+fi
 
 cp="$mc_jar"
 for jar in $(find "$lib_dir" -name "*.jar"); do
@@ -22,6 +33,8 @@ for jar in $(find "$lib_dir" -name "*.jar"); do
     
     cp="${cp}:${jar}"
 done
+
+echo "info: running minecraft version $version as user $username"
 
 java -cp $cp net.minecraft.client.main.Main --username $username --accessToken $access_token --version $version --gameDir $mc_home --assetsDir "$mc_home/assets" --userType mojang --versionType release
 
