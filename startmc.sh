@@ -1,3 +1,5 @@
+#!/bin/bash
+
 version="1.20.4"
 mc_home="$HOME/.minecraft"
 mc_jar="$mc_home/versions/$version/$version.jar"
