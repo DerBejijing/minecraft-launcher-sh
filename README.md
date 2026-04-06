@@ -7,7 +7,7 @@ This script enables the user, to run already downloaded minecraft version jars f
 **It is possible to retrieve all required files using the official api** and I have successfully made a python script for that purpose. **However**, I am not certain, if I can legally provide the sourcecode, since this allows running the game without having an account. Therefore, for the time beeing, this project will not recieve updates until this clears up.. **Despite all the anti-user choices by MS I will to provide assistance for commiting piracy**
 
 # usage
-The versions need to be installed through the minecraft launcher and must have been ran at least once to install all necessary files (actually, I don't know if that is even necessary. unless the version server has an api that requires a valid session id for downloading, it should be doable).  
+The versions need to be installed through the minecraft launcher and must have been ran at least once to install all necessary files ~~(actually, I don't know if that is even necessary. unless the version server has an api that requires a valid session id for downloading, it should be doable)~~.  
 First, set the file as executeable, then run it with the required arguments: version and username ("1.20.4" and "test" in this example).
 ```
 chmod +x startmc.sh
